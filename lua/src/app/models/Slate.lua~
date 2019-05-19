@@ -1,0 +1,9 @@
+
+local Slate = class("Slate", function(filename)
+    return cc.Sprite:create(filename)
+end())
+
+Slate.__index = Slate
+
+return Slate
+

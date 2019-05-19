@@ -1,0 +1,15 @@
+
+local MyApp = class("MyApp", cc.load("mvc").AppBase)
+
+function MyApp:onCreate()
+    math.randomseed(os.time())
+    
+    -- auto window size
+    local winSize = cc.Director:getInstance():getWinSize()
+    local designSize = cc.Director:getInstance():getOpenGLView():getDesignResolutionSize()
+    local zoomFactor = winSize.height / designSize.height
+    cc.Director:getInstance():getOpenGLView():setFrameZoomFactor(zoomFactor)
+    printInfo("win size w=%d h=%d zoom=%d", winSize.width, winSize.height, zoomFactor)
+end
+
+return MyApp

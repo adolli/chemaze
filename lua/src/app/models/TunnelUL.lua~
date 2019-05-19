@@ -1,0 +1,18 @@
+
+local TunnelBase = import(".TunnelBase")
+
+local TunnelUL = class("TunnelUL", TunnelBase)
+
+function TunnelUL:ctor()
+    TunnelUL.super.ctor(self)
+    self.link_ = {
+        TunnelBase.PU,
+        TunnelBase.PL
+    }
+    self.type_ = TunnelBase.TUNNEL_UL
+    self.typeInactive_ = TunnelBase.TUNNEL_UL
+end
+
+
+return TunnelUL
+

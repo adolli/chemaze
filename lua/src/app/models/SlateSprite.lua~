@@ -1,0 +1,70 @@
+
+local SlateSprite = class("SlateSprite", function(filename)
+    local slate = cc.Sprite:create(filename)
+    return slate
+end)
+
+SlateSprite.FACE_WIDTH = 167
+SlateSprite.FACE_HEIGHT = 172
+
+function SlateSprite:ctor()
+    printInfo("[SlateSprite] [ctor]")
+    
+    self.number_ = -1
+    self.numberLabel_ = cc.Label:createWithSystemFont("-1", "Arial", 25)
+        :move(30, 30)
+        :addTo(self)
+
+    -- animation effect callback
+    self.onDeactivate_ = function(_self) end
+    self.onActivate_ = function(_self) end
+
+    -- the pipe
+    self.linkType_ = -1
+    self.linkSymbol_ = cc.Sprite:create("link-UD.png")
+        :setAnchorPoint(cc.p(0, 0))
+        :addTo(self)
+    self.linkBack_ = cc.Sprite:create("link-UD.png")
+        :setAnchorPoint(cc.p(0, 0))
+        --:addTo(self)
+end
+
+function SlateSprite:deactivate()
+    -- the color pipe disapeared
+    local fadeOut = cc.FadeOut:create(0.1)
+    local actionDoneCallback = cc.CallFunc:create(handler(self, self.onDeactivate_))
+    self.linkSymbol_:runAction(cc.Sequence:create(fadeOut, actionDoneCallback))
+    
+    -- the gray pipe fade in
+    local fadeIn = cc.FadeIn:create(0.1)
+    self.linkBack_:runAction(fadeIn)
+    
+    return self
+end
+
+function SlateSprite:activate()
+    local fadeOut = cc.FadeOut:create(0.1)
+    local actionDoneCallback = cc.CallFunc:create(handler(self, self.onActivate_))
+    self.linkBack_:runAction(cc.Sequence:create(fadeOut, actionDoneCallback))
+
+    local fadeIn = cc.fadeIn:create(0.1)
+    self.linkSymbol_:runAction(fadeIn)
+    return self
+end
+
+function SlateSprite:setNumber(num)
+    self.number_ = num
+    self.numberLabel_:setString(string.format("%d", num))
+    return self
+end
+
+function SlateSprite:getNumber()
+    return self.number_
+end
+
+function SlateSprite:getLinkType()
+    return self.linkType_
+end
+
+return SlateSprite
+

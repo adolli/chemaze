@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AppDelegate	AppDelegate.cpp	/^AppDelegate::AppDelegate() {$/;"	f	class:AppDelegate
+AppDelegate	AppDelegate.h	/^class  AppDelegate : private cocos2d::Application$/;"	c
+HelloWorld	HelloWorldScene.h	/^class HelloWorld : public cocos2d::Layer$/;"	c
+MainScene	MainScene.h	/^class MainScene: public Scene$/;"	c
+SlateSprite	SlateSprite.h	/^    SlateSprite()$/;"	f	class:SlateSprite
+SlateSprite	SlateSprite.h	/^class SlateSprite: public Sprite $/;"	c
+StageScene	StageScene.h	/^class StageScene: public Scene$/;"	c
+_APP_DELEGATE_H_	AppDelegate.h	2;"	d
+_CHEMAZE_MAINSCENE_H_	MainScene.h	3;"	d
+_CHEMAZE_SLATESPRITE_H_	SlateSprite.h	3;"	d
+_CHEMAZE_STAGESCNENE_H_	StageScene.h	3;"	d
+__HELLOWORLD_SCENE_H__	HelloWorldScene.h	2;"	d
+applicationDidEnterBackground	AppDelegate.cpp	/^void AppDelegate::applicationDidEnterBackground() {$/;"	f	class:AppDelegate
+applicationDidFinishLaunching	AppDelegate.cpp	/^bool AppDelegate::applicationDidFinishLaunching() {$/;"	f	class:AppDelegate
+applicationWillEnterForeground	AppDelegate.cpp	/^void AppDelegate::applicationWillEnterForeground() {$/;"	f	class:AppDelegate
+create	SlateSprite.h	/^    static SlateSprite* create(const string& filename)$/;"	f	class:SlateSprite
+createScene	HelloWorldScene.cpp	/^Scene* HelloWorld::createScene()$/;"	f	class:HelloWorld
+init	HelloWorldScene.cpp	/^bool HelloWorld::init()$/;"	f	class:HelloWorld
+init	MainScene.h	/^    virtual bool init()$/;"	f	class:MainScene
+init	StageScene.h	/^    virtual bool init()$/;"	f	class:StageScene
+initGLContextAttrs	AppDelegate.cpp	/^void AppDelegate::initGLContextAttrs()$/;"	f	class:AppDelegate
+initWithFile	SlateSprite.h	/^    virtual bool initWithFile(const string& filename)$/;"	f	class:SlateSprite
+menuCloseCallback	HelloWorldScene.cpp	/^void HelloWorld::menuCloseCallback(Ref* pSender)$/;"	f	class:HelloWorld
+playGameCallback	MainScene.h	/^    void playGameCallback(Ref*)$/;"	f	class:MainScene
+~AppDelegate	AppDelegate.cpp	/^AppDelegate::~AppDelegate() $/;"	f	class:AppDelegate

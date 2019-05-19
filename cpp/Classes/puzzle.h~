@@ -1,0 +1,38 @@
+
+#ifndef _CHEMAZE_PUZZLE_H_
+#define _CHEMAZE_PUZZLE_H_
+
+#include <vector>
+using std::vector;
+using std::size_t;
+
+class Puzzle
+{
+public:
+    
+    Puzzle(size_t w, size_t h, int holeMark = 0)
+        : width_(w), height_(h), holeMark_(holeMark)
+    {
+        table_.resize(height_);
+        for (int r = 0; r < height_; ++r)
+        {
+            table_[r].resize(width_);
+            for (int c = 0; c < width_; ++c)
+            {
+                // default sequence 1 .. 8, 0. 0 as the hole
+                table_[r][c] = r * width_ + c + 1;
+            }
+        }
+        table_[height_ - 1][width_ - 1] = holeMark_;
+    }
+
+private:
+
+    size_t width_, height_;
+    int holeMark_;
+    vector<vector<int>> table_;
+
+};
+
+#endif  //_CHEMAZE_PUZZLE_H_
+

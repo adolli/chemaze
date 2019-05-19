@@ -1,0 +1,7 @@
+
+function util.bind(method, obj, ...)
+    return function(...)
+        return method(obj, ...)
+    end
+end
+

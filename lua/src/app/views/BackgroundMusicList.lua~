@@ -1,0 +1,42 @@
+
+local BackgroundMusic = class("BackgroundMusic")
+
+BackgroundMusic.music = {
+    "Beginning.mp3",
+    "Clark.mp3",
+    "Danny.mp3",
+    "Dry Hands.mp3",
+    "Excuse.mp3",
+    "Haggstrom.mp3",
+    "Key.mp3",
+    "Living Mice.mp3",
+    "Mice on Venus.mp3",
+    "Minecraft.mp3",
+    "Subwoofer Lullaby.mp3",
+    "Sweden.mp3",
+    "Wet Hands.mp3"
+}
+
+function BackgroundMusic:play(index)
+    local filename
+    if type(index) == string then
+        filename = index
+    else
+        if index > #BackgroundMusic.music then
+            return
+        end
+        filename = BackgroundMusic.music[index]
+    end
+
+    --cc.SimpleAudioEngine:getInstance():preloadMusic("bgm/"..BackgroundMusic.music[index])
+    cc.SimpleAudioEngine:getInstance():playMusic("bgm/"..filename, true)
+    cc.SimpleAudioEngine:getInstance():setMusicVolume(0.6)
+end
+
+function BackgroundMusic:count()
+    return #BackgroundMusic.music
+end
+
+
+return BackgroundMusic
+
